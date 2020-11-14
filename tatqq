@@ -1,0 +1,41 @@
+[33mcommit 6052eac02b0da1ee7c52918f94133b2924caf8c3[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: SeungminKim <ksm0057@naver.com>
+Date:   Fri Nov 13 17:22:33 2020 +0900
+
+    auth and logout
+
+[33mcommit c82c133842d6964ed23c052af3dda4071f9562a7[m
+Author: SeungminKim <ksm0057@naver.com>
+Date:   Thu Nov 12 17:41:35 2020 +0900
+
+    bcrypt
+
+[33mcommit b924a4fab057d358ed267f7e54e5dab57e4ea4a0[m
+Author: SeungminKim <ksm0057@naver.com>
+Date:   Thu Nov 12 14:44:12 2020 +0900
+
+    private info
+
+[33mcommit 06665c0ba3865694358946f0117d5ea8e15ee8d5[m
+Author: SeungminKim <ksm0057@naver.com>
+Date:   Wed Nov 11 17:25:24 2020 +0900
+
+    nodemon install
+
+[33mcommit d4ef3d3f3cd3dc47afeb060561ad07d2dcebd522[m
+Author: SeungminKim <ksm0057@naver.com>
+Date:   Tue Nov 10 22:09:12 2020 +0900
+
+    gitignore
+
+[33mcommit e87a8a10d1c9cbfe6ad7d905115ea891e7b17e5d[m
+Author: SeungminKim <ksm0057@naver.com>
+Date:   Tue Nov 10 17:50:08 2020 +0900
+
+    db connect
+
+[33mcommit 43b02a23506b4aff7686107c269e3a71029ff10f[m
+Author: SeungminKim <ksm0057@naver.com>
+Date:   Mon Nov 9 21:20:28 2020 +0900
+
+    Hello world

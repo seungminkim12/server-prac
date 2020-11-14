@@ -6,7 +6,6 @@ const cookieParser = require("cookie-parser");
 
 const config = require("./config/key");
 const { User } = require("./models/user");
-const user = require("./models/user");
 const { auth } = require("./middleware/auth");
 
 mongoose
