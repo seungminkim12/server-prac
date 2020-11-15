@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node server/index.js",
-    "backend": "nodemon sever/index.js"
+    "backend": "nodemon server/index.js"
   },
   "author": "Seungmin",
   "license": "ISC",
