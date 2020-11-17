@@ -57,14 +57,14 @@ app.post("/api/users/login", (req, res) => {
     //compare password
     user.comparePassword(req.body.password, (err, isMatch) => {
       if (!isMatch) {
-        return res.json({ loginSuccess: false, message: "Wrong Password" });
+        return res.json({ loginSuccess: false });
       }
     });
 
     //generate Token
     user.generateToken((err, user) => {
       if (err) {
-        return res.statue(400).send(err);
+        return res.send(err);
       }
       res.cookie("x_auth", user.token).status(200).json({ loginSuccess: true });
     });
