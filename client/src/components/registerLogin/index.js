@@ -6,7 +6,7 @@ class RegisterLogin extends Component {
   state = {
     email: "",
     password: "",
-    errors: ["1", "2", "3"],
+    errors: [],
   };
 
   displayErrors = (errors) => {
