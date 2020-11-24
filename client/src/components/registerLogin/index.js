@@ -18,6 +18,7 @@ class RegisterLogin extends Component {
   handleChange = (event) => {
     const { target } = event;
     this.setState({ [target.name]: target.value });
+    console.log(this.state.errors);
   };
 
   submitForm = (event) => {
@@ -32,6 +33,11 @@ class RegisterLogin extends Component {
       this.setState({ errors: [] });
       this.props.dispatch(loginUser(dataToSubmit)).then((response) => {
         if (response.payload.loginSuccess) {
+          this.setState({
+            errors: this.state.errors.concat(
+              "Failed to Login, Check your account"
+            ),
+          });
           this.props.history.push("/");
         } else {
           this.setState({
