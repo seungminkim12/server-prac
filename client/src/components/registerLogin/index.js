@@ -1,24 +1,24 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { loginUser } from "../../actions/user_actions";
 
 class RegisterLogin extends Component {
   state = {
     email: "",
     password: "",
-    errors: [],
+    errors: ["1", "2", "3"],
   };
 
   displayErrors = (errors) => {
     errors.map((error, i) => {
-      <div key={i}>{error}</div>;
+      <p key={i}>{error}</p>;
     });
   };
 
   handleChange = (event) => {
     const { target } = event;
     this.setState({ [target.name]: target.value });
-    console.log(this.state.errors);
   };
 
   submitForm = (event) => {
@@ -32,12 +32,8 @@ class RegisterLogin extends Component {
     if (this.isFormValid(this.state)) {
       this.setState({ errors: [] });
       this.props.dispatch(loginUser(dataToSubmit)).then((response) => {
-        if (response.payload.loginSuccess) {
-          this.setState({
-            errors: this.state.errors.concat(
-              "Failed to Login, Check your account"
-            ),
-          });
+        console.log(response);
+        if (response.payload.loginSuccess === true) {
           this.props.history.push("/");
         } else {
           this.setState({
@@ -100,7 +96,7 @@ class RegisterLogin extends Component {
               </div>
             </div>
 
-            {this.state.errors && (
+            {this.state.errors.length > 0 && (
               <div>{this.displayErrors(this.state.errors)}</div>
             )}
 
@@ -114,6 +110,16 @@ class RegisterLogin extends Component {
                 >
                   Login
                 </button>
+                &nbsp;&nbsp;
+                <Link to="/register">
+                  <button
+                    className="btn waves-effect red lighten-2"
+                    type="submit"
+                    name="action"
+                  >
+                    Sign in
+                  </button>
+                </Link>
               </div>
             </div>
           </form>
