@@ -7,11 +7,11 @@ class RegisterLogin extends Component {
   state = {
     email: "",
     password: "",
-    errors: ["1", "2", "3"],
+    errors: [],
   };
 
   displayErrors = (errors) => {
-    errors.map((error, i) => {
+    errors.forEach((error, i) => {
       <p key={i}>{error}</p>;
     });
   };
@@ -33,7 +33,7 @@ class RegisterLogin extends Component {
       this.setState({ errors: [] });
       this.props.dispatch(loginUser(dataToSubmit)).then((response) => {
         console.log(response);
-        if (response.payload.loginSuccess === true) {
+        if (response.payload.loginSuccess) {
           this.props.history.push("/");
         } else {
           this.setState({
@@ -68,7 +68,9 @@ class RegisterLogin extends Component {
                   type="email"
                   className="validate"
                 />
-                <label htmlFor="email">Email</label>
+                <label className="active" htmlFor="email">
+                  Email
+                </label>
                 <span
                   className="helper-text"
                   data-error="Type a right type email"
@@ -87,7 +89,9 @@ class RegisterLogin extends Component {
                   type="password"
                   className="validate"
                 />
-                <label htmlFor="password">Password</label>
+                <label className="active" htmlFor="password">
+                  Password
+                </label>
                 <span
                   className="helper-text"
                   data-error="Wrong password"
